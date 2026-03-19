@@ -35,7 +35,7 @@ function App() {
 
           {/* Public Routes */}
           <Route path="/*" element={
-            <div className="min-h-screen bg-white pb-20 md:pb-24">
+            <div className="min-h-screen bg-white pb-20 md:pb-24 overflow-x-hidden">
               <Navbar />
               <Routes>
                 <Route path="/" element={<Home />} />

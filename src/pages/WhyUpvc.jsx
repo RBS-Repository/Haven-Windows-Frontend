@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ThermometerSun, Droplets, Volume2, ShieldCheck, ArrowRight } from 'lucide-react';
 import QuoteForm from '../components/QuoteForm';
 
-const BenefitSection = ({ icon: Icon, title, content, reversed = false }) => (
+const BenefitSection = ({ icon: Icon, title, content, reversed = false, image }) => (
     <div className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 py-16`}>
         <div className="flex-1 space-y-6">
             <div className="bg-secondary/10 w-16 h-16 rounded-2xl flex items-center justify-center text-secondary mb-6">
@@ -14,11 +14,22 @@ const BenefitSection = ({ icon: Icon, title, content, reversed = false }) => (
             </div>
         </div>
         <div className="flex-1 w-full">
-            <div className={`relative h-[400px] rounded-3xl overflow-hidden shadow-2xl ${reversed ? 'bg-primary/5' : 'bg-secondary/5'}`}>
-                {/* Abstract pattern background placeholder - would be replaced by specific imagery */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                    <Icon size={120} className="text-slate-400" />
-                </div>
+            <div className={`relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl ${reversed ? 'bg-primary/5' : 'bg-secondary/5'} group`}>
+                {image ? (
+                    <>
+                        <img
+                            src={image}
+                            alt={title}
+                            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay" />
+                    </>
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                        <Icon size={120} className="text-slate-400" />
+                    </div>
+                )}
             </div>
         </div>
     </div>
@@ -63,6 +74,7 @@ const WhyUpvc = () => {
                     <BenefitSection
                         icon={ThermometerSun}
                         title="Warmer in Winter"
+                        image="Warmer.jpg"
                         content={
                             <>
                                 <p>
@@ -83,6 +95,7 @@ const WhyUpvc = () => {
                         reversed
                         icon={Droplets}
                         title="Drier & Healthier"
+                        image="Drier.jpg"
                         content={
                             <>
                                 <p>
@@ -102,6 +115,7 @@ const WhyUpvc = () => {
                     <BenefitSection
                         icon={Volume2}
                         title="Significantly Quieter"
+                        image="Quieter.jpg"
                         content={
                             <>
                                 <p>
@@ -122,6 +136,7 @@ const WhyUpvc = () => {
                         reversed
                         icon={ShieldCheck}
                         title="Enhanced Security"
+                        image="Security.jpg"
                         content={
                             <>
                                 <p>

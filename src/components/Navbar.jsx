@@ -60,7 +60,16 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center space-x-2">
-                            <Link to="/" className="flex items-center group">
+                            <Link
+                                to="/"
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+                                }}
+                                className="flex items-center group"
+                            >
                                 <img
                                     src="/logo.png"
                                     alt="Haven Windows & Doors"
@@ -71,7 +80,18 @@ const Navbar = () => {
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
-                            <Link to="/" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Home</Link>
+                            <Link
+                                to="/"
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+                                }}
+                                className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full"
+                            >
+                                Home
+                            </Link>
                             <Link to="/why-upvc" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Why uPVC</Link>
 
                             {/* Products Mega Menu Container */}
@@ -117,12 +137,8 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            {isHomePage && (
-                                <>
-                                    <a href="#about" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">About us</a>
-                                    <a href="#gallery" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Gallery</a>
-                                </>
-                            )}
+                            <a href="/#about" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">About us</a>
+                            <a href="/#gallery" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Gallery</a>
 
                             <Link to="/admin" className="text-slate-400 hover:text-primary transition-colors" title="Admin Login">
                                 <Lock size={18} />
@@ -165,7 +181,19 @@ const Navbar = () => {
                     {/* Mobile Menu Content */}
                     <div className="flex-1 overflow-y-auto py-6 px-4">
                         <div className="space-y-2">
-                            <Link to="/" className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Home</Link>
+                            <Link
+                                to="/"
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        setIsMobileMenuOpen(false);
+                                    }
+                                }}
+                                className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
+                            >
+                                Home
+                            </Link>
                             <Link to="/why-upvc" className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Why uPVC</Link>
 
                             {/* Mobile Products Accordion */}
@@ -204,12 +232,8 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            {isHomePage && (
-                                <>
-                                    <a href="#why-us" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">About us</a>
-                                    <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Gallery</a>
-                                </>
-                            )}
+                            <a href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">About us</a>
+                            <a href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Gallery</a>
 
                             <Link to="/admin" className="block px-4 py-3 rounded-xl text-base font-medium text-slate-500 hover:bg-slate-50 transition-colors flex items-center gap-2">
                                 <Lock size={18} /> Admin Panel

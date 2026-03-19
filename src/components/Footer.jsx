@@ -55,15 +55,15 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-primary/5 pt-8 pb-8 mb-4">
-                    <h5 className="text-center text-slate-400 font-semibold uppercase tracking-widest text-xs mb-8">Our Trusted Partners</h5>
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div className="border-t border-primary/5 pt-12 pb-12 mb-4">
+                    <h5 className="text-center text-slate-500 font-medium uppercase tracking-widest text-sm mb-12">Our Trusted Partners</h5>
+                    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500">
                         {/* Roto */}
                         <div className="flex items-center gap-2">
                             <img
                                 src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/imagesroto.png"
                                 alt="Roto"
-                                className="h-8 w-auto object-contain"
+                                className="h-10 md:h-12 w-auto object-contain"
                             />
                         </div>
 
@@ -72,7 +72,7 @@ const Footer = () => {
                             <img
                                 src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/siegenia.jpg"
                                 alt="Siegenia"
-                                className="h-8 w-auto object-contain mix-blend-multiply"
+                                className="h-10 md:h-12 w-auto object-contain mix-blend-multiply"
                             />
                         </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                             <img
                                 src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/veka-logo-F1E4F9CE48-seeklogo.com_resized_resized.png"
                                 alt="VEKA"
-                                className="h-8 w-auto object-contain"
+                                className="h-10 md:h-12 w-auto object-contain"
                             />
                         </div>
 
@@ -90,7 +90,7 @@ const Footer = () => {
                             <img
                                 src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/CodeMark_R_col-01-3-1.jpg"
                                 alt="CodeMark Certified"
-                                className="h-8 w-auto object-contain mix-blend-multiply"
+                                className="h-12 md:h-14 w-auto object-contain mix-blend-multiply"
                             />
                         </div>
 
@@ -99,7 +99,7 @@ const Footer = () => {
                             <img
                                 src="https://thewindowcompany.co.nz/wp-content/uploads/2023/08/we-provide-20-Years-Warranty-3.png"
                                 alt="20 Years Warranty"
-                                className="h-10 w-auto object-contain"
+                                className="h-14 md:h-16 w-auto object-contain"
                             />
                         </div>
                     </div>

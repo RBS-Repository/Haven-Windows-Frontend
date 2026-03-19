@@ -41,7 +41,7 @@ const QuoteForm = ({ isModal = false }) => {
                                 <p className="text-sm text-slate-600 font-medium leading-relaxed">
                                     Already have a quote? We aim to beat any comparable written quotes by up to <span className="text-secondary font-bold">15%</span>.
                                 </p>
-                                <p className="text-xs text-slate-400 mt-2 italic">Written quote required.</p>
+                                <p className="text-xs text-slate-400 mt-2 italic">Written quote required. Minimum of 5 items/units apply.</p>
                             </div>
                             <form className="space-y-4">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
