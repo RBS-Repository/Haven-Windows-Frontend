@@ -1,23 +1,35 @@
 import { useState } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, Package, Tag, ChevronLeft, Menu, X, LogOut, RotateCcw, Cloud, CloudOff, RefreshCw, Check, AlertCircle, Image as ImageIcon } from 'lucide-react';
 import { useAdmin } from '../context/AdminContext';
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
 
 const AdminLayout = () => {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     const { resetToDefaults, isOnline, syncToDatabase, syncStatus } = useAdmin();
 
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate('/login');
+        } catch (error) {
+            console.error('Failed to log out', error);
+        }
+    };
+
     const navItems = [
-        { path: '/admin', label: 'Dashboard', icon: LayoutDashboard },
-        { path: '/admin/products', label: 'Products', icon: Package },
-        { path: '/admin/promo', label: 'Promo Section', icon: Tag },
-        { path: '/admin/gallery', label: 'Gallery', icon: ImageIcon },
+        { path: '/admin-8f3kL2x9', label: 'Dashboard', icon: LayoutDashboard },
+        { path: '/admin-8f3kL2x9/products', label: 'Products', icon: Package },
+        { path: '/admin-8f3kL2x9/promo', label: 'Promo Section', icon: Tag },
+        { path: '/admin-8f3kL2x9/gallery', label: 'Gallery', icon: ImageIcon },
     ];
 
     const isActive = (path) => {
-        if (path === '/admin') return location.pathname === '/admin';
+        if (path === '/admin-8f3kL2x9') return location.pathname === '/admin-8f3kL2x9';
         return location.pathname.startsWith(path);
     };
 
@@ -128,24 +140,14 @@ const AdminLayout = () => {
                         {sidebarOpen && <span>{getSyncText()}</span>}
                     </button>
 
+
                     <button
-                        onClick={() => {
-                            if (confirm('Reset all data to defaults?')) {
-                                resetToDefaults();
-                            }
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/60 transition-colors"
-                    >
-                        <RotateCcw size={20} />
-                        {sidebarOpen && <span>Reset Data</span>}
-                    </button>
-                    <Link
-                        to="/"
+                        onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/60 transition-colors"
                     >
                         <LogOut size={20} />
                         {sidebarOpen && <span>Exit Admin</span>}
-                    </Link>
+                    </button>
                 </div>
             </aside>
 

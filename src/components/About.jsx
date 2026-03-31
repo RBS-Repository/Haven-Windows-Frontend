@@ -13,18 +13,18 @@ const About = () => {
                     >
                         <span className="text-secondary text-sm font-bold tracking-[0.2em] uppercase mb-4 block">About Us</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
-                            Quality products. <br />Fair pricing. <br /><span className="text-secondary">Warmer Homes.</span>
+                            Creating Warmer Havens <br /><span className="text-secondary">Across New Zealand.</span>
                         </h2>
 
                         <div className="space-y-6 text-lg text-slate-600 font-light leading-relaxed">
                             <p>
-                                Haven Windows & Doors was created with one simple idea in mind — to help turn more New Zealand homes into true havens: warm, comfortable, and welcoming places to live.
+                                Haven Windows & Doors was created with one simple goal — to help turn more New Zealand homes into true havens: warm, dry, comfortable, and welcoming places to live.
                             </p>
                             <p>
-                                After experiencing cold and damp living conditions in single-glazed homes, we experienced first hand the impact of single glazed windows can have on comfort and wellbeing. That experience shaped our mission: to provide high-quality, NZ-compliant uPVC double-glazed windows and doors at fair, competitive prices.
+                                After experiencing cold and damp living conditions in single-glazed homes first-hand, we saw the profound impact outdated joinery has on comfort, health, and energy bills. That experience shaped our mission: to bring premium European uPVC double-glazed windows and doors to New Zealand at fair, competitive prices.
                             </p>
                             <p>
-                                By working directly with trusted manufacturer and coordinating installation through qualified local professionals, we operate with a lean and efficient model. This allows us to offer excellent value without compromising on product quality or professional service.
+                                By working directly with trusted manufacturers and coordinating installation through qualified local professionals, we operate with a lean, efficient model — passing the savings directly on to you, without compromising on quality or service.
                             </p>
                         </div>
                     </motion.div>

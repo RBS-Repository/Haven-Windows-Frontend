@@ -5,22 +5,22 @@ const Features = () => {
     const features = [
         {
             title: "Thermal Insulation",
-            desc: "Keep your home warm in winter and cool in summer with our double-glazed uPVC systems that exceed NZ building codes.",
-            points: ["Lower Energy Bills", "Zero Condensation", "Guaranteed Warmth"],
+            desc: "Keep your home warm in winter and cool in summer with our double-glazed uPVC systems. Exceed NZ building codes and eliminate condensation for a healthier, more energy-efficient home.",
+            points: ["Up to 40% Energy Savings", "Zero Condensation", "Exceeds NZ Building Code"],
             icon: <Thermometer size={24} />,
             color: "secondary"
         },
         {
-            title: "Acoustic Silence",
-            desc: "Block out traffic and neighborhood noise with our high-performance acoustic glass and multi-chamber profiles.",
-            points: ["Up to 45dB Reduction", "Blocks most outside noises", "Peaceful Living"],
+            title: "Acoustic Noise Reduction",
+            desc: "Block out traffic, wind, and neighbourhood noise with our high-performance acoustic glass and multi-chamber uPVC profiles. Ideal for homes near busy roads or coastal areas.",
+            points: ["Up to 45dB Reduction", "Blocks Traffic & Wind Noise", "Peaceful Living"],
             icon: <Volume2 size={24} />,
             color: "primary"
         },
         {
             title: "Ultimate Security",
-            desc: "Rest easy with multi-point locking systems and impact-resistant materials designed to keep your family safe.",
-            points: ["Multi-Point Locks", "Reinforced Frames", "Secured by Design"],
+            desc: "Rest easy with advanced European multi-point locking systems and reinforced impact-resistant frames, designed to keep your family safe across all New Zealand weather conditions.",
+            points: ["Multi-Point Locks", "Reinforced uPVC Frames", "Secured by Design"],
             icon: <Shield size={24} />,
             color: "secondary"
         }
@@ -51,10 +51,10 @@ const Features = () => {
                 >
                     <span className="inline-block text-secondary font-semibold tracking-widest uppercase text-xs mb-4 px-4 py-2 bg-secondary/5 rounded-full">Performance</span>
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
-                        Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">New Zealand</span>
+                        Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">New Zealand</span>
                     </h2>
                     <p className="text-lg md:text-xl text-slate-500 leading-relaxed">
-                        Our uPVC windows and doors are specifically engineered to handle the demands of the Kiwi environment, from alpine cold to coastal salt air.
+                        Our double-glazed uPVC windows and doors are specifically engineered to handle the demands of the New Zealand climate — from alpine cold to coastal salt air and high winds.
                     </p>
                 </motion.div>
 

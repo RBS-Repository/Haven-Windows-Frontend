@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, ChevronDown, Lock } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAdmin } from '../context/AdminContext';
+import QuoteFormModal from './QuoteFormModal';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+    const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const { products } = useAdmin();
@@ -140,11 +142,17 @@ const Navbar = () => {
                             <a href="/#about" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">About us</a>
                             <a href="/#gallery" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Gallery</a>
 
-                            <Link to="/admin" className="text-slate-400 hover:text-primary transition-colors" title="Admin Login">
-                                <Lock size={18} />
-                            </Link>
 
-                            <a href="#contact" className="bg-primary text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-secondary transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-secondary/20">
+                            <a 
+                                href={isHomePage ? "#contact" : "#"} 
+                                onClick={(e) => {
+                                    if (!isHomePage) {
+                                        e.preventDefault();
+                                        setIsQuoteModalOpen(true);
+                                    }
+                                }}
+                                className="bg-primary text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-secondary transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-secondary/20"
+                            >
                                 Free Quote
                             </a>
                         </div>
@@ -235,20 +243,28 @@ const Navbar = () => {
                             <a href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">About us</a>
                             <a href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Gallery</a>
 
-                            <Link to="/admin" className="block px-4 py-3 rounded-xl text-base font-medium text-slate-500 hover:bg-slate-50 transition-colors flex items-center gap-2">
-                                <Lock size={18} /> Admin Panel
-                            </Link>
                         </div>
                     </div>
 
-                    {/* Mobile Menu Footer */}
                     <div className="p-4 border-t border-slate-100">
-                        <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center bg-primary text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:bg-secondary transition-colors">
+                        <a 
+                            href={isHomePage ? "#contact" : "#"} 
+                            onClick={(e) => {
+                                setIsMobileMenuOpen(false);
+                                if (!isHomePage) {
+                                    e.preventDefault();
+                                    setIsQuoteModalOpen(true);
+                                }
+                            }}
+                            className="block w-full text-center bg-primary text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:bg-secondary transition-colors"
+                        >
                             Free Quote
                         </a>
                     </div>
                 </div>
             </div>
+            
+            <QuoteFormModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
         </>
     );
 };

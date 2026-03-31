@@ -4,24 +4,24 @@ import { ArrowRight, Box, ShieldCheck, Zap } from 'lucide-react';
 const BenefitCards = () => {
     const cards = [
         {
-            title: "Quality Products",
-            desc: "European windows and doors designed for New Zealand's unique climate conditions.",
+            title: "Premium uPVC Quality",
+            desc: "European double-glazed uPVC windows and doors, purpose-built for New Zealand's climate — from frosty Dunedin winters to breezy Wellington coasts.",
             icon: <Box size={24} />,
             link: "/products",
             color: "text-blue-600",
             bg: "bg-blue-50"
         },
         {
-            title: "Reliable Services",
-            desc: "Our team of experienced builders ensure high quality advice and service.",
+            title: "Qualified Local Installers",
+            desc: "Our team of trusted, experienced professionals ensures flawless installation and expert advice on every window replacement in NZ.",
             icon: <ShieldCheck size={24} />,
             link: "#why-us",
             color: "text-orange-600",
             bg: "bg-orange-50"
         },
         {
-            title: "Great Value",
-            desc: "We provide competitive quotes to help support your renovation projects.",
+            title: "Beat Any Quote by 15%",
+            desc: "We aim to beat any comparable written quote by up to 15%. Get a free, no-obligation quote today and start saving.",
             icon: <Zap size={24} />,
             link: "#contact",
             color: "text-green-600",
@@ -42,10 +42,10 @@ const BenefitCards = () => {
                 >
                     <span className="text-secondary font-bold tracking-widest uppercase text-xs mb-3 block">Why Choose Us</span>
                     <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-                        Excellence in Every Detail
+                        The Haven Advantage
                     </h2>
                     <p className="max-w-2xl mx-auto text-slate-600 text-lg">
-                        We combine premium materials with expert craftsmanship to deliver superior results for your home.
+                        We combine premium double-glazed uPVC with expert installation to deliver warmer, quieter, and more energy-efficient homes across New Zealand.
                     </p>
                 </motion.div>
 

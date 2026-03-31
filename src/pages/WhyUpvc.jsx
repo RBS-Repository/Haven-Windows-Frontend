@@ -48,9 +48,9 @@ const WhyUpvc = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-secondary text-white font-bold tracking-widest uppercase text-sm mb-4 block">The Smart Choice</span>
-                        <h1 className="text-5xl md:text-7xl  text-white font-bold mb-6">Why Choose uPVC?</h1>
+                        <h1 className="text-5xl md:text-7xl text-white font-bold mb-6">Why Choose uPVC Windows & Doors in New Zealand?</h1>
                         <p className="text-xl text-slate-300 max-w-2xl font-light">
-                            Discover how German-engineered uPVC joinery can transform your home into a warmer, drier, and quieter sanctuary.
+                            Discover why thousands of Kiwi homeowners are switching to high-performance uPVC double-glazed windows and doors for warmer, drier, and quieter homes.
                         </p>
                     </motion.div>
                 </div>
@@ -59,9 +59,9 @@ const WhyUpvc = () => {
             {/* Introduction */}
             <section className="py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-primary mb-6">Performance Meets Sustainability</h2>
+                    <h2 className="text-3xl font-bold text-primary mb-6">uPVC vs Aluminium Windows: The Performance Difference</h2>
                     <p className="text-lg text-slate-600 leading-relaxed">
-                        While uPVC joinery might represent a slightly higher initial investment compared to standard aluminium, the long-term benefits for your home's comfort and energy efficiency are substantial. Our systems deliver superior insulation, ensuring your investment pays off in lower energy bills and a healthier living environment.
+                        While uPVC joinery may represent a slightly higher initial investment than standard aluminium windows, the long-term benefits for your New Zealand home's comfort and energy efficiency are substantial. Our double-glazed uPVC systems deliver superior insulation — saving you up to 40% on energy bills — and a healthier, condensation-free living environment.
                     </p>
                 </div>
             </section>
@@ -158,9 +158,9 @@ const WhyUpvc = () => {
             {/* CTA Section */}
             <section className="py-24 bg-primary text-white text-center">
                 <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-6">Ready to experience the difference?</h2>
+                    <h2 className="text-4xl font-bold mb-6">Ready to Experience the uPVC Difference?</h2>
                     <p className="text-xl text-slate-300 mb-10">
-                        Upgrade to a warmer, drier, and more secure home with Haven Windows & Doors.
+                        Upgrade to a warmer, drier, and more energy-efficient home with Haven Windows & Doors. We serve homeowners across New Zealand — from Wellington to Christchurch, Dunedin, Queenstown and beyond.
                     </p>
                     <a href="#contact" className="inline-flex items-center gap-3 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary-light transition-all shadow-lg hover:shadow-secondary/20">
                         Get a Free Quote <ArrowRight />

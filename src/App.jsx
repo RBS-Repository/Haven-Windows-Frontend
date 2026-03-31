@@ -9,10 +9,14 @@ import ProductDetail from './pages/ProductDetail';
 import WhyUpvc from './pages/WhyUpvc';
 import FAQ from './pages/FAQ';
 import Terms from './pages/Terms';
+import VekaSystem from './pages/VekaSystem';
 import StickyBottomNav from './components/StickyBottomNav';
 
 // Admin imports
 import { AdminProvider } from './context/AdminContext';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
 import AdminLayout from './layouts/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
@@ -21,12 +25,16 @@ import AdminGallery from './pages/admin/AdminGallery';
 
 function App() {
   return (
-    <AdminProvider>
-      <Router>
-        <ScrollToTop />
-        <Routes>
-          {/* Admin Routes - No Navbar/Footer */}
-          <Route path="/admin" element={<AdminLayout />}>
+    <AuthProvider>
+      <AdminProvider>
+        <Router>
+          <ScrollToTop />
+          <Routes>
+            {/* Login Route */}
+            <Route path="/login" element={<Login />} />
+
+            {/* Admin Routes - No Navbar/Footer */}
+            <Route path="/admin-8f3kL2x9" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
             <Route index element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="promo" element={<AdminPromo />} />
@@ -45,14 +53,16 @@ function App() {
                 <Route path="/why-upvc" element={<WhyUpvc />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/veka-system" element={<VekaSystem />} />
               </Routes>
               <Footer />
               <StickyBottomNav />
             </div>
           } />
         </Routes>
-      </Router>
-    </AdminProvider>
+        </Router>
+      </AdminProvider>
+    </AuthProvider>
   );
 }
 

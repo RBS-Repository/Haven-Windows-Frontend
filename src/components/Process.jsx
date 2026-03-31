@@ -5,26 +5,26 @@ const Process = () => {
     const steps = [
         {
             icon: <MessageSquare size={28} />,
-            title: "Consultation & Measurement",
-            desc: "We discuss your needs and take accurate measurements for your windows and doors. You may also send measurements for an initial estimate.",
+            title: "Free Consultation & Measure",
+            desc: "We listen to your needs, assess your property, and take accurate measurements. Can't have us visit? Send your measurements for a fast initial estimate.",
             number: "01"
         },
         {
             icon: <FileText size={28} />,
-            title: "Specifications & Quote",
-            desc: "We prepare technical drawings and a clear quote. Once approved, your order is confirmed for manufacture.",
+            title: "Unbeatable Quote",
+            desc: "We prepare technical drawings and a transparent, all-inclusive quote. We aim to beat any comparable written quote by up to 15% — guaranteed.",
             number: "02"
         },
         {
             icon: <Factory size={28} />,
-            title: "Order Confirmation",
-            desc: "Once your order is confirmed, your windows and doors are custom-made using high-quality uPVC profiles and double-glazed units.",
+            title: "Custom Manufacturing",
+            desc: "Your uPVC windows and doors are precision-engineered to your exact specifications using premium European profiles and double-glazed units.",
             number: "03"
         },
         {
             icon: <Truck size={28} />,
-            title: "Delivery & Installation",
-            desc: "Your completed windows and doors are delivered to site and installed by experienced local installers, transforming your home.",
+            title: "Professional Installation",
+            desc: "Delivered and installed across New Zealand by our experienced local team. We leave your home spotless — and instantly warmer.",
             number: "04"
         }
     ];
@@ -54,8 +54,8 @@ const Process = () => {
                     >
                         <span className="inline-block text-secondary font-semibold tracking-widest uppercase text-xs mb-4 px-4 py-2 bg-secondary/10 rounded-full">Our Process</span>
                         <h2 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                            How it{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Works</span>
+                            Seamless Window{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Replacement NZ</span>
                         </h2>
                     </motion.div>
                 </div>

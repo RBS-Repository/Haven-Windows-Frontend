@@ -17,28 +17,28 @@ const AdminDashboard = () => {
             value: totalCategories,
             icon: Package,
             color: 'bg-blue-500',
-            link: '/admin/products'
+            link: '/admin-8f3kL2x9/products'
         },
         {
             label: 'Total Products',
             value: totalProducts,
             icon: TrendingUp,
             color: 'bg-green-500',
-            link: '/admin/products'
+            link: '/admin-8f3kL2x9/products'
         },
         {
             label: 'Window Types',
             value: windowCategories,
             icon: Package,
             color: 'bg-purple-500',
-            link: '/admin/products'
+            link: '/admin-8f3kL2x9/products'
         },
         {
             label: 'Door Types',
             value: doorCategories,
             icon: Package,
             color: 'bg-orange-500',
-            link: '/admin/products'
+            link: '/admin-8f3kL2x9/products'
         },
     ];
 
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-primary">Recent Categories</h2>
-                        <Link to="/admin/products" className="text-secondary hover:underline text-sm font-medium">
+                        <Link to="/admin-8f3kL2x9/products" className="text-secondary hover:underline text-sm font-medium">
                             View All
                         </Link>
                     </div>
@@ -115,7 +115,7 @@ const AdminDashboard = () => {
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-primary">Current Promo</h2>
-                        <Link to="/admin/promo" className="text-secondary hover:underline text-sm font-medium">
+                        <Link to="/admin-8f3kL2x9/promo" className="text-secondary hover:underline text-sm font-medium">
                             Edit
                         </Link>
                     </div>
@@ -134,23 +134,7 @@ const AdminDashboard = () => {
                 </div>
             </div>
 
-            {/* Info Banner */}
-            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-                <div className="flex items-start gap-4">
-                    <div className="bg-blue-500 p-2 rounded-lg text-white">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-blue-800">Local Storage Mode</h3>
-                        <p className="text-blue-700 text-sm mt-1">
-                            All changes are saved to your browser's local storage. Data will persist until you clear your browser cache.
-                            Firebase and MongoDB integration coming soon!
-                        </p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     );
 };

@@ -69,19 +69,20 @@ const Hero = () => {
                                 </div>
 
                                 <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] mb-8 tracking-tight text-primary">
-                                    Built for <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Warmth & Comfort.</span>
+                                    Premium uPVC <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Windows & Doors</span><br />
+                                    <span className="text-4xl md:text-5xl text-slate-500 font-medium">New Zealand</span>
                                 </h1>
 
                                 <p className="text-xl text-slate-600 mb-12 max-w-md leading-relaxed font-light">
-                                    Precision-engineered uPVC systems that harmonize thermal performance with uncompromising aesthetic beauty.
+                                    European-engineered double-glazed uPVC windows and doors, built specifically for New Zealand's climate. Up to 40% energy savings, 45dB noise reduction, and a 10-year warranty.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                                     <a href="#contact" className="w-full sm:w-auto text-center group relative overflow-hidden bg-primary text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold transition-all hover:bg-primary-light">
                                         <div className="absolute inset-0 w-0 bg-secondary transition-all duration-[250ms] ease-out group-hover:w-full opacity-10"></div>
                                         <span className="relative flex items-center justify-center gap-2">
-                                            Start Project <ArrowRight size={20} />
+                                            Get a Free Quote <ArrowRight size={20} />
                                         </span>
                                     </a>
                                     <a href="products" className="w-full sm:w-auto text-center group flex items-center justify-center gap-2 text-primary font-bold px-6 py-4 hover:text-secondary transition-colors">
@@ -131,7 +132,7 @@ const Hero = () => {
                             >
                                 <img
                                     src="https://icdn.tradew.com/file/202204/1575393/jpg/8238723.jpg"
-                                    alt="Modern house exterior"
+                                    alt="Modern New Zealand home exterior with premium uPVC double-glazed windows"
                                     className="w-full h-full object-cover transform transition-transform duration-[2s] hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply" />

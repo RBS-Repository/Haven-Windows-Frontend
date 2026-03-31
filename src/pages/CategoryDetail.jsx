@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, LayoutGrid, List, SlidersHorizontal, ChevronRight, Eye } from 'lucide-react';
+import { ArrowLeft, ArrowRight, LayoutGrid, List, SlidersHorizontal, ChevronRight, Eye, Check } from 'lucide-react';
 import { useAdmin } from '../context/AdminContext';
+import VekaDrawer from '../components/VekaDrawer';
 
 const Skeleton = ({ className }) => (
     <div className={`animate-pulse bg-slate-200 rounded-xl ${className}`} />
@@ -26,11 +27,14 @@ const ViewToggle = ({ mode, setMode }) => (
     </div>
 );
 
+
+
 const CategoryDetail = () => {
     const { id } = useParams();
     const { products: categories, isLoading } = useAdmin();
     const [viewMode, setViewMode] = useState('grid');
     const [sortBy, setSortBy] = useState('newest');
+    const [isVekaDrawerOpen, setIsVekaDrawerOpen] = useState(false);
 
     // In this context, 'products' from useAdmin are actually categories
     const category = categories.find(c => c.id === id);
@@ -89,6 +93,17 @@ const CategoryDetail = () => {
                                 Browse Categories
                             </h3>
                             <ul className="space-y-2">
+                                <li className="mb-4">
+                                    <button
+                                        onClick={() => setIsVekaDrawerOpen(true)}
+                                        className="w-full flex items-center justify-between p-3 rounded-xl transition-all duration-200 bg-secondary/5 text-secondary hover:bg-secondary/10 font-bold border border-secondary/20 shadow-sm"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <LayoutGrid size={18} />
+                                            <span>VEKA AD70 SOFTLINE</span>
+                                        </div>
+                                    </button>
+                                </li>
                                 {categories.map((c) => (
                                     <li key={c.id}>
                                         <Link
@@ -99,10 +114,6 @@ const CategoryDetail = () => {
                                                 }`}
                                         >
                                             <span>{c.title}</span>
-                                            <span className={`text-xs px-2.5 py-1 rounded-full ${c.id === id ? 'bg-secondary text-white' : 'bg-slate-100 text-slate-500'
-                                                }`}>
-                                                {c.products?.length || 0}
-                                            </span>
                                         </Link>
                                     </li>
                                 ))}
@@ -112,6 +123,8 @@ const CategoryDetail = () => {
 
                     {/* Main Content */}
                     <div className="flex-1 w-full">
+
+
                         {/* Header Area */}
                         <div className="bg-white rounded-2xl p-8 lg:p-10 border border-slate-200 shadow-sm mb-8 relative overflow-hidden group min-h-[220px]">
                             {isLoading ? (
@@ -138,6 +151,39 @@ const CategoryDetail = () => {
                                     />
                                 </>
                             )}
+                        </div>
+
+                        {/* Mobile Category Navigation (Horizontal Slide) */}
+                        <div className="lg:hidden mb-6 -mx-4 px-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                            <div className="flex gap-3 w-max">
+                                {categories.map((c) => (
+                                    <Link
+                                        key={c.id}
+                                        to={`/category/${c.id}`}
+                                        className={`px-5 py-2.5 rounded-full text-sm font-bold whitespace-nowrap transition-all shadow-sm ${
+                                            c.id === id 
+                                            ? 'bg-primary text-white shadow-primary/20' 
+                                            : 'bg-white text-slate-600 border border-slate-200 hover:border-primary/30'
+                                        }`}
+                                    >
+                                        {c.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Mobile Veka Drawer Launch Button (Hidden on lg screens) */}
+                        <div className="lg:hidden mb-6">
+                            <button
+                                onClick={() => setIsVekaDrawerOpen(true)}
+                                className="w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 bg-secondary/5 text-secondary hover:bg-secondary/10 font-bold border border-secondary/30 shadow-sm"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <LayoutGrid size={20} />
+                                    <span>VEKA AD70 System Specs</span>
+                                </div>
+                                <ChevronRight size={18} />
+                            </button>
                         </div>
 
                         {/* Toolbar */}
@@ -295,6 +341,8 @@ const CategoryDetail = () => {
                     </div>
                 </div>
             </div>
+
+            <VekaDrawer isOpen={isVekaDrawerOpen} onClose={() => setIsVekaDrawerOpen(false)} />
         </main>
     );
 };
