@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 // Animated Counter Component
@@ -64,18 +64,17 @@ const Hero = () => {
                                 <div className="flex items-center space-x-4 mb-8">
                                     <div className="h-[1px] w-12 bg-secondary" />
                                     <span className="text-secondary text-sm font-bold tracking-[0.2em] uppercase">
-                                        uPVC WINDOWS & DOORS
+                                        New Zealand's Premium uPVC Supplier
                                     </span>
                                 </div>
 
                                 <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] mb-8 tracking-tight text-primary">
-                                    Premium uPVC <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Windows & Doors</span><br />
-                                    <span className="text-4xl md:text-5xl text-slate-500 font-medium">New Zealand</span>
+                                    Warmer, Quieter<br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">NZ Homes Start Here.</span>
                                 </h1>
 
                                 <p className="text-xl text-slate-600 mb-12 max-w-md leading-relaxed font-light">
-                                    European-engineered double-glazed uPVC windows and doors, built specifically for New Zealand's climate. Up to 40% energy savings, 45dB noise reduction, and a 10-year warranty.
+                                    European double-glazed uPVC windows and doors, designed for New Zealand conditions - delivering improved energy efficiency, enhanced comfort, and effective noise reduction.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
@@ -92,31 +91,7 @@ const Hero = () => {
                             </motion.div>
 
                             {/* Stats Section - Static, no parallax */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="grid grid-cols-3 gap-4 md:gap-8 mt-16 md:mt-24 border-t border-slate-200 pt-8 pb-8 bg-white"
-                            >
-                                <div>
-                                    <p className="text-3xl md:text-4xl font-bold text-primary mb-1">
-                                        <AnimatedCounter end={40} suffix="%" duration={2} />
-                                    </p>
-                                    <p className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Energy Saved</p>
-                                </div>
-                                <div>
-                                    <p className="text-3xl md:text-4xl font-bold text-primary mb-1">
-                                        <AnimatedCounter end={45} suffix="dB" duration={2.2} />
-                                    </p>
-                                    <p className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Noise Reduction</p>
-                                </div>
-                                <div>
-                                    <p className="text-3xl md:text-4xl font-bold text-primary mb-1">
-                                        <AnimatedCounter end={10} suffix="yr" duration={1.8} />
-                                    </p>
-                                    <p className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Warranty</p>
-                                </div>
-                            </motion.div>
+
                         </div>
                     </div>
 
@@ -132,10 +107,43 @@ const Hero = () => {
                             >
                                 <img
                                     src="https://icdn.tradew.com/file/202204/1575393/jpg/8238723.jpg"
-                                    alt="Modern New Zealand home exterior with premium uPVC double-glazed windows"
+                                    alt="Warm New Zealand home with premium double-glazed uPVC windows installed"
                                     className="w-full h-full object-cover transform transition-transform duration-[2s] hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply" />
+                            </motion.div>
+                            
+                            {/* Promotional Glass Upgrade Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, x: 20 }}
+                                animate={{ 
+                                    opacity: 1, 
+                                    scale: 1, 
+                                    x: 0,
+                                    y: [0, -10, 0] 
+                                }}
+                                transition={{ 
+                                    opacity: { duration: 0.8, delay: 1 },
+                                    scale: { duration: 0.8, delay: 1 },
+                                    x: { duration: 0.8, delay: 1 },
+                                    y: { 
+                                        duration: 4, 
+                                        repeat: Infinity, 
+                                        ease: "easeInOut" 
+                                    }
+                                }}
+                                className="absolute -top-4 right-[-2%] z-[30] hidden lg:flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-100 max-w-[280px]"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                                    <Sparkles size={24} className="text-secondary" />
+                                </div>
+                                <div>
+                                    <h4 className="text-secondary font-bold text-xs uppercase tracking-wider mb-1">Free Upgrade</h4>
+                                    <p className="text-primary font-bold text-sm leading-tight">
+                                        Low-E argon-filled toughened glass
+                                    </p>
+                                </div>
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full animate-ping" />
                             </motion.div>
 
                             {/* Secondary Floating Image */}
@@ -147,7 +155,7 @@ const Hero = () => {
                             >
                                 <img
                                     src="https://icdn.tradew.com/file/202204/1575393/jpg/8321561.jpg"
-                                    alt="Window Detail"
+                                    alt="Close up of uPVC window frame with double glazing - zero condensation"
                                     className="w-full h-full object-cover"
                                 />
                             </motion.div>

@@ -19,7 +19,7 @@ const BenefitSection = ({ icon: Icon, title, content, reversed = false, image })
                     <>
                         <img
                             src={image}
-                            alt={title}
+                            alt={`${title} - uPVC windows benefit for New Zealand homes`}
                             className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
                         />
@@ -160,7 +160,7 @@ const WhyUpvc = () => {
                 <div className="max-w-3xl mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-6">Ready to Experience the uPVC Difference?</h2>
                     <p className="text-xl text-slate-300 mb-10">
-                        Upgrade to a warmer, drier, and more energy-efficient home with Haven Windows & Doors. We serve homeowners across New Zealand — from Wellington to Christchurch, Dunedin, Queenstown and beyond.
+                        Upgrade to a warmer, drier, and more energy-efficient home with Haven Windows & Doors.
                     </p>
                     <a href="#contact" className="inline-flex items-center gap-3 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary-light transition-all shadow-lg hover:shadow-secondary/20">
                         Get a Free Quote <ArrowRight />

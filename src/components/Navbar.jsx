@@ -139,8 +139,30 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            <a href="/#about" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">About us</a>
-                            <a href="/#gallery" className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full">Gallery</a>
+                            <Link 
+                                to="/#about" 
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full"
+                            >
+                                About us
+                            </Link>
+                            <Link 
+                                to="/#gallery" 
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="text-sm font-medium text-primary hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full"
+                            >
+                                Gallery
+                            </Link>
 
 
                             <a 
@@ -240,8 +262,32 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            <a href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">About us</a>
-                            <a href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors">Gallery</a>
+                            <Link 
+                                to="/#about" 
+                                onClick={(e) => {
+                                    setIsMobileMenuOpen(false);
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
+                            >
+                                About us
+                            </Link>
+                            <Link 
+                                to="/#gallery" 
+                                onClick={(e) => {
+                                    setIsMobileMenuOpen(false);
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
+                            >
+                                Gallery
+                            </Link>
 
                         </div>
                     </div>

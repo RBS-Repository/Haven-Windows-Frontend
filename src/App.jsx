@@ -9,6 +9,9 @@ import ProductDetail from './pages/ProductDetail';
 import WhyUpvc from './pages/WhyUpvc';
 import FAQ from './pages/FAQ';
 import Terms from './pages/Terms';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Warranty from './pages/Warranty';
+import ProductSpecifications from './pages/ProductSpecifications';
 import VekaSystem from './pages/VekaSystem';
 import StickyBottomNav from './components/StickyBottomNav';
 
@@ -53,6 +56,9 @@ function App() {
                 <Route path="/why-upvc" element={<WhyUpvc />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/warranty" element={<Warranty />} />
+                <Route path="/product-specifications" element={<ProductSpecifications />} />
                 <Route path="/veka-system" element={<VekaSystem />} />
               </Routes>
               <Footer />

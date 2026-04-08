@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Box, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Box, ShieldCheck, DollarSign } from 'lucide-react';
 
 const BenefitCards = () => {
     const cards = [
@@ -13,19 +13,20 @@ const BenefitCards = () => {
         },
         {
             title: "Qualified Local Installers",
-            desc: "Our team of trusted, experienced professionals ensures flawless installation and expert advice on every window replacement in NZ.",
+            desc: "Installed by qualified and experienced independent builders, with coordination to support a smooth and reliable window replacement process.“",
             icon: <ShieldCheck size={24} />,
             link: "#why-us",
             color: "text-orange-600",
             bg: "bg-orange-50"
         },
         {
-            title: "Beat Any Quote by 15%",
-            desc: "We aim to beat any comparable written quote by up to 15%. Get a free, no-obligation quote today and start saving.",
-            icon: <Zap size={24} />,
+            title: "Price Match Promise",
+            desc: "We aim to beat any comparable written quote by up to 10%* Get a free, no-obligation quote today and start saving.",
+            icon: <DollarSign size={24} />,
             link: "#contact",
             color: "text-green-600",
-            bg: "bg-green-50"
+            bg: "bg-green-50",
+            footnote: "Applies to orders of 10 windows and 2 doors or more"
         }
     ];
 
@@ -80,6 +81,12 @@ const BenefitCards = () => {
                                     <span className="mr-2">Learn More</span>
                                     <ArrowRight size={16} className="transform transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
+
+                                {card.footnote && (
+                                    <p className="mt-4 text-[10px] text-slate-400 italic leading-tight">
+                                        {card.footnote}
+                                    </p>
+                                )}
                             </div>
                         </motion.div>
                     ))}

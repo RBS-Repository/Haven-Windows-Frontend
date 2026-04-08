@@ -40,7 +40,7 @@ const FAQ = () => {
             items: [
                 {
                     question: "What is the estimated delivery time?",
-                    answer: "Upon confirmation of your order, the delivery timeline for our windows and doors is typically 12 weeks. We ensure every product is manufactured to your exact specifications before shipping."
+                    answer: "Upon confirmation of your order, the manufacture and delivery timeline for our windows and doors is typically 14 weeks. We ensure every product is manufactured to your exact specifications before shipping."
                 },
                 {
                     question: "Do you offer warranties on your products?",

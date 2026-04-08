@@ -4,16 +4,16 @@ import { Thermometer, Volume2, Shield, CheckCircle2 } from 'lucide-react';
 const Features = () => {
     const features = [
         {
-            title: "Thermal Insulation",
-            desc: "Keep your home warm in winter and cool in summer with our double-glazed uPVC systems. Exceed NZ building codes and eliminate condensation for a healthier, more energy-efficient home.",
-            points: ["Up to 40% Energy Savings", "Zero Condensation", "Exceeds NZ Building Code"],
+            title: "Comfort You Can Feel",
+            desc: "Enjoy a warmer home in winter and a cooler space in summer with high-performance uPVC double glazing. Designed to reduce condensation and built to meet New Zealand building standards.",
+            points: ["Year-round comfort", "Zero condensation, healthier living", "NZ Building Code compliant"],
             icon: <Thermometer size={24} />,
             color: "secondary"
         },
         {
             title: "Acoustic Noise Reduction",
-            desc: "Block out traffic, wind, and neighbourhood noise with our high-performance acoustic glass and multi-chamber uPVC profiles. Ideal for homes near busy roads or coastal areas.",
-            points: ["Up to 45dB Reduction", "Blocks Traffic & Wind Noise", "Peaceful Living"],
+            desc: "Reduce traffic, wind, and neighbourhood noise with high-performance glazing and multi-chamber uPVC profiles. Ideal for homes near busy roads or exposed areas.",
+            points: ["Reduces external noise", "Helps block traffic and wind sound", "Quieter, more peaceful living"],
             icon: <Volume2 size={24} />,
             color: "primary"
         },
@@ -54,7 +54,7 @@ const Features = () => {
                         Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">New Zealand</span>
                     </h2>
                     <p className="text-lg md:text-xl text-slate-500 leading-relaxed">
-                        Our double-glazed uPVC windows and doors are specifically engineered to handle the demands of the New Zealand climate — from alpine cold to coastal salt air and high winds.
+                        Our double-glazed uPVC windows and doors are specifically engineered to handle the demands of the New Zealand climate — from alpine cold to hot summer days and high winds.
                     </p>
                 </motion.div>
 

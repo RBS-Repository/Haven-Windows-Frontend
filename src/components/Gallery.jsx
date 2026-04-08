@@ -47,11 +47,11 @@ const Gallery = () => {
                             className="h-1.5 bg-secondary mb-6 rounded-full"
                         />
                         <h2 className="text-5xl md:text-7xl font-black text-primary tracking-tighter leading-none mb-6">
-                            PRODUCT <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">EXAMPLES</span>
+                            OUR <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">RANGE</span>
                         </h2>
                         <p className="text-lg text-slate-500 max-w-md font-medium">
-                            Example installations of uPVC window and door systems we supply.
+                            Examples of uPVC window and door styles available through our supply. Images are for reference purposes.
                         </p>
                     </div>
                 </div>

@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAdmin } from '../context/AdminContext';
 
 const Footer = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
     const { products } = useAdmin();
     const windows = products.filter(p => p.type === 'windows');
     const doors = products.filter(p => p.type === 'doors');
@@ -46,11 +48,52 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold text-primary mb-6 uppercase tracking-wider text-sm">Company</h4>
                         <ul className="space-y-4">
-                            <li><a href="#" className="text-slate-600 hover:text-secondary transition-colors">About Us</a></li>
-                            <li><a href="#" className="text-slate-600 hover:text-secondary transition-colors">Project Gallery</a></li>
-                            <li><a href="/faq" className="text-slate-600 hover:text-secondary transition-colors">FAQs</a></li>
-                            <li><a href="/terms" className="text-slate-600 hover:text-secondary transition-colors">Terms & Conditions</a></li>
-                            <li><a href="#contact" className="text-slate-600 hover:text-secondary transition-colors">Contact</a></li>
+                            <li>
+                                <Link 
+                                    to="/#about" 
+                                    onClick={(e) => {
+                                        if (isHomePage) {
+                                            e.preventDefault();
+                                            document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                >
+                                    About Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link 
+                                    to="/#gallery" 
+                                    onClick={(e) => {
+                                        if (isHomePage) {
+                                            e.preventDefault();
+                                            document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                >
+                                    Project Gallery
+                                </Link>
+                            </li>
+                            <li><Link to="/faq" className="text-slate-600 hover:text-secondary transition-colors">FAQs</Link></li>
+                            <li><Link to="/warranty" className="text-slate-600 hover:text-secondary transition-colors">Warranty</Link></li>
+                            <li><Link to="/product-specifications" className="text-slate-600 hover:text-secondary transition-colors">Product Specifications</Link></li>
+                            <li><Link to="/privacy-policy" className="text-slate-600 hover:text-secondary transition-colors">Privacy Policy</Link></li>
+                            <li>
+                                <Link 
+                                    to="/#contact" 
+                                    onClick={(e) => {
+                                        if (isHomePage) {
+                                            e.preventDefault();
+                                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                >
+                                    Contact
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -94,14 +137,7 @@ const Footer = () => {
                             />
                         </div>
 
-                        {/* Warranty */}
-                        <div className="flex items-center gap-2">
-                            <img
-                                src="https://thewindowcompany.co.nz/wp-content/uploads/2023/08/we-provide-20-Years-Warranty-3.png"
-                                alt="20 Years Warranty"
-                                className="h-14 md:h-16 w-auto object-contain"
-                            />
-                        </div>
+
                     </div>
                 </div>
 

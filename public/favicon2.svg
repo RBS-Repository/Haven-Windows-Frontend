@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    :root {
+      --primary: #1E315A;
+      --secondary: #EA832D;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #FFFFFF;
+      }
+    }
+    .main { fill: none; stroke: var(--primary); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .windows { fill: var(--secondary); }
+    .base { fill: none; stroke: var(--primary); stroke-width: 6; stroke-linecap: round; }
+  </style>
+
+  <!-- House Stroke -->
+  <path className="main" d="M20 45 L50 20 L80 45 L80 80 L20 80 Z" style="stroke: var(--primary);" />
+
+  <!-- Window Panes (Orange) -->
+  <rect className="windows" x="48" y="28" width="12" height="15" rx="2" style="fill: var(--secondary);" />
+  <rect className="windows" x="62" y="28" width="12" height="15" rx="2" style="fill: var(--secondary);" />
+  <rect className="windows" x="48" y="45" width="12" height="15" rx="2" style="fill: var(--secondary);" />
+  <rect className="windows" x="62" y="45" width="12" height="15" rx="2" style="fill: var(--secondary);" />
+
+  <!-- Curved Base -->
+  <path className="base" d="M15 88 Q 50 78 85 88" style="stroke: var(--primary);" />
+</svg>

@@ -12,7 +12,7 @@ const Process = () => {
         {
             icon: <FileText size={28} />,
             title: "Unbeatable Quote",
-            desc: "We prepare technical drawings and a transparent, all-inclusive quote. We aim to beat any comparable written quote by up to 15% — guaranteed.",
+            desc: "We prepare technical drawings and a transparent, all-inclusive quote. We aim to beat any comparable written quote by up to 10% — guaranteed.",
             number: "02"
         },
         {
@@ -24,7 +24,7 @@ const Process = () => {
         {
             icon: <Truck size={28} />,
             title: "Professional Installation",
-            desc: "Delivered and installed across New Zealand by our experienced local team. We leave your home spotless — and instantly warmer.",
+            desc: "Installation is carried out by experienced & qualified, independent local builders. We coordinate the process to help ensure a smooth and efficient experience - leaving your home clean and comfortable.",
             number: "04"
         }
     ];
