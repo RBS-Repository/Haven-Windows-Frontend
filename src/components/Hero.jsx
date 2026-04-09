@@ -68,9 +68,9 @@ const Hero = () => {
                                     </span>
                                 </div>
 
-                                <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] mb-8 tracking-tight text-primary">
-                                    Warmer, Quieter<br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">NZ Homes Start Here.</span>
+                                <h1 className="text-4xl md:text-7xl font-black leading-[0.95] mb-8 tracking-tighter">
+                                    <span className="text-secondary block mb-2">Warmer Kiwi Homes</span>
+                                    <span className="text-primary">Start Here.</span>
                                 </h1>
 
                                 <p className="text-xl text-slate-600 mb-12 max-w-md leading-relaxed font-light">
@@ -96,14 +96,15 @@ const Hero = () => {
                     </div>
 
                     {/* Image Side - Staggered Composition with subtle parallax */}
-                    <div className="lg:col-span-7 relative h-[600px] md:h-[800px] hidden md:block">
-                        <motion.div style={{ y: y2 }} className="relative h-full w-full">
+                    {/* Image Side - Redesigned for Mobile (Sticker Style Badge) */}
+                    <div className="lg:col-span-7 relative h-[420px] sm:h-[550px] md:h-[800px] block">
+                        <motion.div style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? y2 : 0 }} className="relative h-full w-full flex items-center justify-center lg:block">
                             {/* Main Large Image */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute right-0 top-12 w-[85%] h-[85%] rounded-tl-[100px] overflow-hidden shadow-2xl z-10"
+                                className="relative lg:absolute lg:right-0 lg:top-12 w-full lg:w-[85%] h-[90%] lg:h-[85%] rounded-[2rem] lg:rounded-tl-[100px] lg:rounded-br-none overflow-hidden shadow-2xl z-10 border-4 border-white lg:border-none"
                             >
                                 <img
                                     src="https://icdn.tradew.com/file/202204/1575393/jpg/8238723.jpg"
@@ -113,49 +114,43 @@ const Hero = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply" />
                             </motion.div>
                             
-                            {/* Promotional Glass Upgrade Badge */}
+                            {/* Redesigned Promotional Badge - Sticker Style for Mobile */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.8, x: 20 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ 
                                     opacity: 1, 
-                                    scale: 1, 
-                                    x: 0,
-                                    y: [0, -10, 0] 
+                                    scale: 1,
+                                    y: [0, -8, 0] 
                                 }}
                                 transition={{ 
                                     opacity: { duration: 0.8, delay: 1 },
                                     scale: { duration: 0.8, delay: 1 },
-                                    x: { duration: 0.8, delay: 1 },
-                                    y: { 
-                                        duration: 4, 
-                                        repeat: Infinity, 
-                                        ease: "easeInOut" 
-                                    }
+                                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                                 }}
-                                className="absolute -top-4 right-[-2%] z-[30] hidden lg:flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-100 max-w-[280px]"
+                                className="absolute bottom-12 left-2 lg:bottom-auto lg:top-[-10px] lg:right-[-2%] z-[30] flex items-center gap-3 bg-white/95 backdrop-blur-xl p-3 sm:p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/50 max-w-[220px] sm:max-w-[280px]"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                                    <Sparkles size={24} className="text-secondary" />
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0 shadow-lg shadow-secondary/20">
+                                    <Sparkles size={22} className="text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="text-secondary font-bold text-xs uppercase tracking-wider mb-1">Free Upgrade</h4>
-                                    <p className="text-primary font-bold text-sm leading-tight">
-                                        Low-E argon-filled toughened glass
+                                    <h4 className="text-secondary font-black text-[10px] sm:text-xs uppercase tracking-[0.15em] mb-0.5">Free Upgrade</h4>
+                                    <p className="text-primary font-bold text-[11px] sm:text-sm leading-tight">
+                                        Low-E argon-filled glass
                                     </p>
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full animate-ping" />
                             </motion.div>
-
-                            {/* Secondary Floating Image */}
+ 
+                            {/* Secondary Floating Image - Only on Desktop */}
                             <motion.div
                                 initial={{ opacity: 0, x: 50, y: 50 }}
                                 animate={{ opacity: 1, x: 0, y: 0 }}
                                 transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                                className="absolute left-8 bottom-16 w-[40%] h-[40%] rounded-br-[80px] overflow-hidden shadow-2xl z-20 border-8 border-white"
+                                className="absolute left-8 bottom-16 w-[40%] h-[40%] rounded-br-[80px] overflow-hidden shadow-2xl z-20 border-8 border-white hidden lg:block"
                             >
                                 <img
                                     src="https://icdn.tradew.com/file/202204/1575393/jpg/8321561.jpg"
-                                    alt="Close up of uPVC window frame with double glazing - zero condensation"
+                                    alt="Close up of uPVC window frame with double glazing"
                                     className="w-full h-full object-cover"
                                 />
                             </motion.div>

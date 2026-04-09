@@ -31,7 +31,7 @@ const PromoSection = () => {
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-2">{promo.title}</h2>
                             <p className="text-white/90 max-w-xl text-lg">
-                                {promo.description} <span className="font-bold underline">{promo.highlightText}</span>.
+                                {promo.description} <span className="font-bold underline">10%</span>.
                             </p>
                             <p className="text-white/60 text-[10px] mt-2 italic">*Minimum order of 10 windows and 2 doors applies</p>
                         </div>

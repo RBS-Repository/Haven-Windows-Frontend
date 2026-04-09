@@ -142,7 +142,7 @@ export const AdminProvider = ({ children }) => {
 
     const addCategory = async (newCategory) => {
         const id = newCategory.title.toLowerCase().replace(/\s+/g, '-') + '-' + Date.now();
-        const categoryData = { ...newCategory, id, products: [] };
+        const categoryData = { ...newCategory, id, images: newCategory.images || [], specs: newCategory.specs || {} };
 
         if (isOnline) {
             try {
@@ -176,60 +176,6 @@ export const AdminProvider = ({ children }) => {
         }
     };
 
-    // Sub-product CRUD
-    const updateProduct = (categoryId, productId, updates) => {
-        setProducts(prev => {
-            const updated = prev.map(cat => {
-                if (cat.id === categoryId) {
-                    const updatedCat = {
-                        ...cat,
-                        products: cat.products.map(prod =>
-                            prod.id === productId ? { ...prod, ...updates } : prod
-                        )
-                    };
-                    saveCategory(updatedCat);
-                    return updatedCat;
-                }
-                return cat;
-            });
-            return updated;
-        });
-    };
-
-    const addProduct = (categoryId, newProduct) => {
-        const id = newProduct.title.toLowerCase().replace(/\s+/g, '-') + '-' + Date.now();
-        setProducts(prev => {
-            const updated = prev.map(cat => {
-                if (cat.id === categoryId) {
-                    const updatedCat = {
-                        ...cat,
-                        products: [...(cat.products || []), { ...newProduct, id }]
-                    };
-                    saveCategory(updatedCat);
-                    return updatedCat;
-                }
-                return cat;
-            });
-            return updated;
-        });
-    };
-
-    const deleteProduct = (categoryId, productId) => {
-        setProducts(prev => {
-            const updated = prev.map(cat => {
-                if (cat.id === categoryId) {
-                    const updatedCat = {
-                        ...cat,
-                        products: cat.products.filter(prod => prod.id !== productId)
-                    };
-                    saveCategory(updatedCat);
-                    return updatedCat;
-                }
-                return cat;
-            });
-            return updated;
-        });
-    };
 
     // Promo update
     const updatePromo = async (updates) => {
@@ -322,9 +268,6 @@ export const AdminProvider = ({ children }) => {
         updateCategory,
         addCategory,
         deleteCategory,
-        updateProduct,
-        addProduct,
-        deleteProduct,
         updatePromo,
         gallery,
         addGalleryItem,

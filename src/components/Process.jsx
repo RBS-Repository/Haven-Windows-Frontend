@@ -24,7 +24,7 @@ const Process = () => {
         {
             icon: <Truck size={28} />,
             title: "Professional Installation",
-            desc: "Installation is carried out by experienced & qualified, independent local builders. We coordinate the process to help ensure a smooth and efficient experience - leaving your home clean and comfortable.",
+            desc: "Installation is carried out by experienced & qualified, independent local builders. We coordinate the process to help ensure a smooth and efficient experience.",
             number: "04"
         }
     ];

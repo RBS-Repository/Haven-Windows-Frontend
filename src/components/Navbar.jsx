@@ -75,7 +75,7 @@ const Navbar = () => {
                                 <img
                                     src="/logo.png"
                                     alt="Haven Windows & Doors"
-                                    className={`w-auto object-contain transition-all duration-500 ease-in-out ${(isScrolled || !isHomePage) ? 'h-12' : 'h-24 md:h-28'}`}
+                                    className={`w-auto object-contain transition-all duration-500 ease-in-out ${(isScrolled || !isHomePage) ? 'h-10 lg:h-12' : 'h-16 md:h-24 lg:h-28'}`}
                                 />
                             </Link>
                         </div>
@@ -202,7 +202,9 @@ const Navbar = () => {
                 <div className="flex flex-col h-full">
                     {/* Mobile Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">
-                        <img src="/logo.png" href="/" alt="Haven" className="h-10 object-contain" />
+                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                            <img src="/logo.png" alt="Haven" className="h-8 object-contain" />
+                        </Link>
                         <button onClick={() => setIsMobileMenuOpen(false)} className="text-primary p-2">
                             <X size={24} />
                         </button>

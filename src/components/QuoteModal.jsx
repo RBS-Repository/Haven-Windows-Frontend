@@ -54,7 +54,7 @@ const QuoteModal = () => {
                         <h3 className="text-2xl font-bold text-center text-primary mb-4">Already have a quote?</h3>
 
                         <p className="text-center text-slate-600 mb-8 text-lg">
-                            We aim to beat any comparable written quote by up to <span className="font-bold text-secondary text-xl">15%</span>.
+                            We aim to beat any comparable written quote by up to * <span className="font-bold text-secondary text-xl">15%</span>.
                         </p>
 
                         <div className="space-y-4">

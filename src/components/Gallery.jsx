@@ -80,13 +80,8 @@ const Gallery = () => {
                                                 {img.category}
                                             </span>
                                         </div>
-                                        <h4 className="text-3xl font-black text-white leading-tight mb-2 tracking-tight">
-                                            {img.title}
-                                        </h4>
-                                        <div className="flex items-center text-slate-300 gap-1.5 text-sm font-medium">
-                                            <MapPin size={14} className="text-secondary" />
-                                            {img.location}
-                                        </div>
+
+
                                     </div>
                                 </div>
                             </motion.div>
@@ -131,11 +126,8 @@ const Gallery = () => {
                                 <div className="w-full md:w-80 text-left space-y-6 shrink-0">
                                     <div>
                                         <div className="h-1 w-12 bg-secondary mb-4 rounded-full" />
-                                        <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none mb-4">{selectedImg.title}</h3>
-                                        <div className="flex items-center gap-2 text-slate-400 font-bold uppercase tracking-widest text-xs">
-                                            <MapPin size={14} className="text-secondary" />
-                                            {selectedImg.location}
-                                        </div>
+
+
                                     </div>
                                     <p className="text-slate-400 leading-relaxed font-medium">Installation Category: {selectedImg.category}</p>
                                     <div className="pt-8 grid grid-cols-1 gap-4">

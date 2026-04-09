@@ -9,7 +9,7 @@ const StickyBottomNav = () => {
                         <div className="bg-secondary/10 p-2 rounded-full group-hover:bg-secondary/20 transition-colors">
                             <Phone size={16} className="text-secondary" />
                         </div>
-                        <span className="font-medium text-xs md:text-sm lg:text-base">“+64 210 246 7843</span>
+                        <span className="font-medium text-xs md:text-sm lg:text-base">+64 210 246 7843</span>
                     </a>
                     <a href="mailto:hello@havenwindows.co.nz" className="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors group">
                         <div className="bg-secondary/10 p-2 rounded-full group-hover:bg-secondary/20 transition-colors">
