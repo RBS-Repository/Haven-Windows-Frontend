@@ -108,7 +108,7 @@ const ProductSpecifications = () => {
                                 Technical Datasheet <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </a>
                         </div>
-                        <div 
+                        <div
                             onClick={() => setSelectedImage(profile.image)}
                             className="lg:col-span-7 bg-slate-50 rounded-[40px] overflow-hidden aspect-[16/9] flex items-center justify-center relative border border-slate-100 shadow-inner group/img p-8 md:p-12 cursor-pointer"
                         >
@@ -117,7 +117,7 @@ const ProductSpecifications = () => {
                                 alt={profile.name}
                                 className="max-w-full max-h-full object-contain transition-transform duration-[2s] group-hover/img:scale-105 drop-shadow-md"
                             />
-                            
+
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover/img:opacity-100 transition-opacity" />
 
                             {/* Technical Badge Overlay */}
@@ -228,7 +228,7 @@ const ProductSpecifications = () => {
                         >
                             <X size={40} strokeWidth={1} />
                         </motion.button>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -237,10 +237,10 @@ const ProductSpecifications = () => {
                             className="relative w-full h-full flex items-center justify-center p-4 md:p-12"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img 
-                                src={selectedImage} 
-                                alt="Full scale specification view" 
-                                className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-2xl shadow-2xl drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)] bg-white/10" 
+                            <img
+                                src={selectedImage}
+                                alt="Full scale specification view"
+                                className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-2xl shadow-2xl drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)] bg-white/10"
                             />
                         </motion.div>
                     </motion.div>

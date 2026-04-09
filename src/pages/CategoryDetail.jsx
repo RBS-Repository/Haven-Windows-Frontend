@@ -98,160 +98,145 @@ const CategoryDetail = () => {
                 </div>
             )}
 
-            {/* 1. New Minimalist Lux Hero Section */}
-            <section className="relative pt-32 pb-24 overflow-hidden bg-slate-50/50">
-                {/* Refined Background Elements */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10">
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full" />
-                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full" />
+            {/* 1. New High-End Editorial Hero Section */}
+            <section className="relative pt-32 pb-24 overflow-hidden bg-white">
+                {/* Large Background Ghost Title for Depth */}
+                <div className="absolute top-20 left-4 w-full select-none pointer-events-none -z-10 overflow-hidden hidden lg:block">
+                    <h1 className="text-[18rem] font-black text-slate-50 leading-none whitespace-nowrap">
+                        {category?.title}
+                    </h1>
                 </div>
-                
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumbs Revisited */}
-                    <div className="flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-16">
-                        <Link to="/products" className="hover:text-primary transition-colors">Products</Link>
-                        <ChevronRight size={14} className="mx-2" />
-                        {isLoading ? (
-                            <Skeleton className="h-4 w-32" />
-                        ) : (
-                            <span className="text-secondary">{category?.title}</span>
-                        )}
-                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                        {/* Image Showcase - Contained & Symmetrical */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1 }}
-                            className="relative lg:order-2"
-                        >
-                            <div className="absolute -inset-6 bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 -z-10" />
-                            <div 
-                                className="relative aspect-square md:aspect-[4/5] bg-slate-50 rounded-[2.5rem] overflow-hidden group cursor-zoom-in"
-                                onClick={() => setLightboxImage(heroImages[activeImage])}
-                            >
-                                {isLoading ? (
-                                    <Skeleton className="w-full h-full" />
-                                ) : heroImages.length > 0 ? (
-                                    <>
-                                        <img
-                                            src={heroImages[activeImage] || heroImages[0]}
-                                            alt={`${category?.title}`}
-                                            className="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
-                                            <div className="bg-white/90 p-4 rounded-full shadow-2xl">
-                                                <Maximize2 size={24} className="text-primary" />
-                                            </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+                        
+                        {/* LEFT: Information Column */}
+                        <div className="lg:col-span-5 relative z-10">
+                            <div className="flex flex-col border-l-2 border-primary/5 pl-10 py-6">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="space-y-10"
+                                >
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-3 text-secondary">
+                                            <span className="h-px w-8 bg-secondary" />
+                                            <span className="text-[10px] font-black uppercase tracking-[0.5em]">The Series</span>
                                         </div>
-                                    </>
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-slate-300">
-                                        <LayoutGrid size={64} />
+                                        <h1 className="text-6xl md:text-8xl font-black text-primary leading-[0.9] tracking-tighter">
+                                            {isLoading ? <Skeleton className="h-16 w-full" /> : category?.title}
+                                        </h1>
                                     </div>
-                                )}
+
+                                    <div className="space-y-8">
+                                        {isLoading ? (
+                                            <div className="space-y-2">
+                                                <Skeleton className="h-4 w-full" />
+                                                <Skeleton className="h-4 w-5/6" />
+                                            </div>
+                                        ) : (
+                                            <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                                                {category?.description}
+                                            </p>
+                                        )}
+
+                                        <div className="flex flex-col sm:flex-row gap-4">
+                                            <button
+                                                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                                                className="px-10 py-5 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-xl shadow-primary/10 flex items-center justify-center gap-3 group"
+                                            >
+                                                Get Pricing Info 
+                                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                            </button>
+                                            <button
+                                                onClick={() => setIsVekaDrawerOpen(true)}
+                                                className="px-10 py-5 bg-secondary text-white font-bold rounded-2xl hover:bg-secondary-light transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-3"
+                                            >
+                                                Technical Specs 
+                                                <LayoutGrid size={20} />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* Series Metadata */}
+                                    <div className="pt-10 flex gap-12 border-t border-slate-100">
+                                        <div className="space-y-1">
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Engineering</p>
+                                            <p className="text-primary font-black text-sm">German Profile</p>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Testing</p>
+                                            <p className="text-primary font-black text-sm">AS/NZS Compliant</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: High-End Exhibit Frame */}
+                        <div className="lg:col-span-7">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1 }}
+                                className="relative group"
+                            >
+                                {/* Decorative "Glass" Frame Background */}
+                                <div className="absolute -inset-10 bg-slate-50 rounded-[4rem] -z-10 group-hover:bg-secondary/5 transition-colors duration-700" />
                                 
-                                {/* Photo Count Overlay */}
+                                <div 
+                                    className="relative aspect-square md:aspect-[5/6] bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 overflow-hidden cursor-zoom-in"
+                                    onClick={() => setLightboxImage(heroImages[activeImage])}
+                                >
+                                    {isLoading ? (
+                                        <Skeleton className="w-full h-full" />
+                                    ) : heroImages.length > 0 ? (
+                                        <>
+                                            <img
+                                                src={heroImages[activeImage]}
+                                                alt={`${category?.title}`}
+                                                className="w-full h-full object-contain p-12 transition-transform duration-1000 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-500">
+                                                <div className="bg-white/95 p-6 rounded-full shadow-2xl">
+                                                    <Maximize2 size={24} className="text-primary" />
+                                                </div>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center text-slate-200">
+                                            <LayoutGrid size={64} />
+                                        </div>
+                                    )}
+
+                                    {/* Gallery Photos Count Counter */}
+                                    {heroImages.length > 1 && (
+                                        <div className="absolute top-8 right-8 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-full tracking-widest uppercase">
+                                            {activeImage + 1} / {heroImages.length} 
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Curated Portfolio Strip (Thumbnails) */}
                                 {heroImages.length > 1 && (
-                                    <div className="absolute bottom-6 right-6 bg-primary/95 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-black text-white uppercase tracking-widest flex items-center gap-2">
-                                        <Zap size={10} /> View Gallery ({heroImages.length} Photos)
+                                    <div className="flex gap-4 mt-8 justify-center overflow-x-auto no-scrollbar py-2">
+                                        {heroImages.map((img, i) => (
+                                            <button
+                                                key={i}
+                                                onClick={() => setActiveImage(i)}
+                                                className={`w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all p-1 bg-white flex-shrink-0 ${
+                                                    activeImage === i ? 'border-secondary shadow-lg scale-110' : 'border-transparent opacity-40 hover:opacity-100 hover:scale-105'
+                                                }`}
+                                            >
+                                                <img src={img} alt={`Slide ${i + 1}`} className="w-full h-full object-cover rounded-xl" />
+                                            </button>
+                                        ))}
                                     </div>
                                 )}
-                            </div>
+                            </motion.div>
+                        </div>
 
-                            {/* Thumbnail Horizontal Strip Below */}
-                            {heroImages.length > 1 && (
-                                <div className="flex gap-3 mt-6 justify-center">
-                                    {heroImages.map((img, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => setActiveImage(i)}
-                                            className={`w-16 h-16 rounded-2xl overflow-hidden border-2 transition-all p-1 bg-white ${
-                                                activeImage === i ? 'border-secondary shadow-lg scale-110' : 'border-transparent opacity-50 hover:opacity-100'
-                                            }`}
-                                        >
-                                            <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover rounded-xl" />
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </motion.div>
-
-                        {/* Text Content Column */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="lg:order-1"
-                        >
-                            <div className="flex items-center gap-4 mb-8">
-                                <span className="h-px w-12 bg-secondary/30" />
-                                <span className="text-xs font-black text-secondary uppercase tracking-[0.3em]">
-                                    {isLoading ? <Skeleton className="h-3 w-24" /> : "Premium Range"}
-                                </span>
-                            </div>
-
-                            <h1 className="text-5xl lg:text-7xl font-black text-primary leading-[1.05] tracking-tighter mb-8">
-                                {isLoading ? (
-                                    <div className="space-y-3">
-                                        <Skeleton className="h-16 w-full" />
-                                        <Skeleton className="h-16 w-4/5" />
-                                    </div>
-                                ) : (
-                                    category?.title
-                                )}
-                            </h1>
-
-                            <div className="text-xl text-slate-500 leading-relaxed font-medium mb-12 max-w-lg">
-                                {isLoading ? (
-                                    <div className="space-y-2">
-                                        <Skeleton className="h-6 w-full" />
-                                        <Skeleton className="h-6 w-11/12" />
-                                    </div>
-                                ) : (
-                                    category?.description
-                                )}
-                            </div>
-
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                {isLoading ? (
-                                    <>
-                                        <Skeleton className="h-16 w-full sm:w-48 rounded-2xl" />
-                                        <Skeleton className="h-16 w-full sm:w-48 rounded-2xl" />
-                                    </>
-                                ) : (
-                                    <>
-                                        <button
-                                            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                                            className="px-10 py-5 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-xl shadow-primary/10 flex items-center justify-center gap-3 group"
-                                        >
-                                            Get Pricing Info 
-                                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                                        </button>
-                                        <button
-                                            onClick={() => setIsVekaDrawerOpen(true)}
-                                            className="px-10 py-5 bg-secondary text-white font-bold rounded-2xl hover:bg-secondary-light transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-3"
-                                        >
-                                            Technical Specs 
-                                            <LayoutGrid size={20} />
-                                        </button>
-                                    </>
-                                )}
-                            </div>
-
-                            {/* Trust Badges */}
-                            <div className="mt-16 flex flex-wrap gap-10">
-                                <div className="space-y-1">
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Quality Standard</p>
-                                    <p className="text-primary font-bold">AS/NZS Compliant</p>
-                                </div>
-                                <div className="space-y-1">
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Warranty</p>
-                                    <p className="text-primary font-bold">10 Year Guarantee</p>
-                                </div>
-                            </div>
-                        </motion.div>
                     </div>
                 </div>
             </section>
