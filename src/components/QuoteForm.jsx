@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { User, Mail, Phone, MapPin, MessageSquare, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnnqoeel'; // Replace YOUR_FORM_ID with your Formspree form ID
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgopjnjg'; // Replace YOUR_FORM_ID with your Formspree form ID
 
 const QuoteForm = ({ isModal = false }) => {
     const [formData, setFormData] = useState({

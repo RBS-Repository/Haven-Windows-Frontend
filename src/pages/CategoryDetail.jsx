@@ -163,8 +163,8 @@ const CategoryDetail = () => {
                                     <div className="pt-10 flex gap-12 border-t border-slate-100">
 
                                         <div className="space-y-1">
-                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Testing</p>
-                                            <p className="text-primary font-black text-sm">AS/NZS Compliant</p>
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Warranty</p>
+                                            <p className="text-primary font-black text-sm">10 Year Guarantee</p>
                                         </div>
                                     </div>
                                 </motion.div>

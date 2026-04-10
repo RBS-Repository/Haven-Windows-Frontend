@@ -11,7 +11,11 @@ const Navbar = () => {
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const { products } = useAdmin();
+    const { products, isLoading } = useAdmin();
+
+    const Skeleton = ({ className }) => (
+        <div className={`animate-pulse bg-slate-100 rounded-md ${className}`} />
+    );
 
     const windows = products.filter(p => p.type === 'windows');
     const doors = products.filter(p => p.type === 'doors');
@@ -110,14 +114,24 @@ const Navbar = () => {
                                                 Windows
                                             </h3>
                                             <ul className="space-y-3">
-                                                {windows.map((cat) => (
-                                                    <li key={cat.id}>
-                                                        <Link to={`/category/${cat.id}`} className="block text-slate-600 hover:text-primary hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm font-medium">
-                                                            {cat.title}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                                {windows.length === 0 && <li className="text-slate-400 text-xs px-3">No windows added yet</li>}
+                                                {isLoading ? (
+                                                    [1, 2, 3].map(i => (
+                                                        <li key={i} className="px-3 py-2">
+                                                            <Skeleton className="h-5 w-32" />
+                                                        </li>
+                                                    ))
+                                                ) : (
+                                                    <>
+                                                        {windows.map((cat) => (
+                                                            <li key={cat.id}>
+                                                                <Link to={`/category/${cat.id}`} className="block text-slate-600 hover:text-primary hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm font-medium">
+                                                                    {cat.title}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                        {windows.length === 0 && <li className="text-slate-400 text-xs px-3">No windows added yet</li>}
+                                                    </>
+                                                )}
                                             </ul>
                                         </div>
                                         <div className="bg-slate-50 -my-8 -mr-8 p-8">
@@ -125,14 +139,24 @@ const Navbar = () => {
                                                 Doors
                                             </h3>
                                             <ul className="space-y-3">
-                                                {doors.map((cat) => (
-                                                    <li key={cat.id}>
-                                                        <Link to={`/category/${cat.id}`} className="block text-slate-600 hover:text-primary hover:bg-white px-3 py-2 rounded-lg transition-colors text-sm font-medium">
-                                                            {cat.title}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                                {doors.length === 0 && <li className="text-slate-400 text-xs px-3">No doors added yet</li>}
+                                                {isLoading ? (
+                                                    [1, 2, 3].map(i => (
+                                                        <li key={i} className="px-3 py-2">
+                                                            <Skeleton className="h-5 w-32 bg-slate-200" />
+                                                        </li>
+                                                    ))
+                                                ) : (
+                                                    <>
+                                                        {doors.map((cat) => (
+                                                            <li key={cat.id}>
+                                                                <Link to={`/category/${cat.id}`} className="block text-slate-600 hover:text-primary hover:bg-white px-3 py-2 rounded-lg transition-colors text-sm font-medium">
+                                                                    {cat.title}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                        {doors.length === 0 && <li className="text-slate-400 text-xs px-3">No doors added yet</li>}
+                                                    </>
+                                                )}
                                             </ul>
                                         </div>
                                     </div>
@@ -242,23 +266,41 @@ const Navbar = () => {
                                         {/* Windows Section */}
                                         <div>
                                             <h4 className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 px-4">Windows</h4>
-                                            {windows.map((cat) => (
-                                                <Link key={cat.id} to={`/category/${cat.id}`} className="block px-4 py-2 text-sm text-slate-600 hover:text-primary transition-colors">
-                                                    {cat.title}
-                                                </Link>
-                                            ))}
-                                            {windows.length === 0 && <p className="text-slate-400 text-[10px] px-4 italic">None added</p>}
+                                            {isLoading ? (
+                                                <div className="px-4 py-2 space-y-3">
+                                                    <Skeleton className="h-4 w-24" />
+                                                    <Skeleton className="h-4 w-32" />
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    {windows.map((cat) => (
+                                                        <Link key={cat.id} to={`/category/${cat.id}`} className="block px-4 py-2 text-sm text-slate-600 hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                                                            {cat.title}
+                                                        </Link>
+                                                    ))}
+                                                    {windows.length === 0 && <p className="text-slate-400 text-[10px] px-4 italic">None added</p>}
+                                                </>
+                                            )}
                                         </div>
 
                                         {/* Doors Section */}
                                         <div>
                                             <h4 className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 px-4">Doors</h4>
-                                            {doors.map((cat) => (
-                                                <Link key={cat.id} to={`/category/${cat.id}`} className="block px-4 py-2 text-sm text-slate-600 hover:text-primary transition-colors">
-                                                    {cat.title}
-                                                </Link>
-                                            ))}
-                                            {doors.length === 0 && <p className="text-slate-400 text-[10px] px-4 italic">None added</p>}
+                                            {isLoading ? (
+                                                <div className="px-4 py-2 space-y-3">
+                                                    <Skeleton className="h-4 w-24" />
+                                                    <Skeleton className="h-4 w-32" />
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    {doors.map((cat) => (
+                                                        <Link key={cat.id} to={`/category/${cat.id}`} className="block px-4 py-2 text-sm text-slate-600 hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                                                            {cat.title}
+                                                        </Link>
+                                                    ))}
+                                                    {doors.length === 0 && <p className="text-slate-400 text-[10px] px-4 italic">None added</p>}
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

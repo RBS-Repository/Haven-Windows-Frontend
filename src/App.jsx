@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -32,6 +33,7 @@ function App() {
       <AdminProvider>
         <Router>
           <ScrollToTop />
+          <Preloader />
           <Routes>
             {/* Login Route */}
             <Route path="/login" element={<Login />} />
