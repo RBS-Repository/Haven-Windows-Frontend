@@ -77,7 +77,7 @@ const Gallery = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 transform translate-y-4 group-hover:translate-y-0">
                                         <div className="flex items-center gap-2 mb-3">
                                             <span className="px-3 py-1 bg-secondary text-white text-[10px] font-black uppercase tracking-widest rounded-full">
-                                                {img.category}
+                                                {img.category}/Doors
                                             </span>
                                         </div>
 
@@ -129,7 +129,7 @@ const Gallery = () => {
 
 
                                     </div>
-                                    <p className="text-slate-400 leading-relaxed font-medium">Installation Category: {selectedImg.category}</p>
+                                    <p className="text-slate-400 leading-relaxed font-medium">Installation Category: {selectedImg.category}/Doors</p>
                                     <div className="pt-8 grid grid-cols-1 gap-4">
                                         <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                                             <div className="text-[10px] font-black text-secondary uppercase mb-1">System</div>
