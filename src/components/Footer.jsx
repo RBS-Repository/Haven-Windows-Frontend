@@ -57,7 +57,7 @@ const Footer = () => {
                                             document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
                                         }
                                     }}
-                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                    className="text-slate-600 hover:text-secondary transition-colors"
                                 >
                                     About Us
                                 </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
                                             document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
                                         }
                                     }}
-                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                    className="text-slate-600 hover:text-secondary transition-colors"
                                 >
                                     Project Gallery
                                 </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
                                             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                                         }
                                     }}
-                                    className="text-slate-600 hover:text-secondary transition-colors uppercase tracking-wider text-xs font-medium"
+                                    className="text-slate-600 hover:text-secondary transition-colors"
                                 >
                                     Contact
                                 </Link>
