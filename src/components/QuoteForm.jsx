@@ -84,7 +84,7 @@ const QuoteForm = ({ isModal = false }) => {
                             <h3 className="text-2xl font-bold mb-4">Get Your Free Quote</h3>
                             <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 mb-6">
                                 <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                                    Already have a quote?. We aim to beat any comparable written quote by up to *<span className="text-secondary font-bold">10%</span>.
+                                    Already have a quote?. We aim to beat any comparable written quote by up to <span className="text-secondary font-bold">10%*</span>.
                                 </p>
                                 <p className="text-xs text-slate-400 mt-2 italic">*Written quote required. Minimum order of 10 windows and 2 doors applies.</p>
                             </div>

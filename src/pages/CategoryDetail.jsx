@@ -53,7 +53,7 @@ const CategoryDetail = () => {
         { title: 'Low Maintenance', description: `Unlike timber or aluminum, high-grade uPVC will never rot, warp, or corrode. A simple wipe down is all it takes to keep your ${category?.title?.toLowerCase() || 'windows'} looking new for decades.` }
     ];
 
-    const defaultBadges = ['A+ Energy Rated', 'Noise Reduction Up to 45dB', 'UV Resistant Finish', 'Child Safe Hardware'];
+    const defaultBadges = ['Guaranteed Noise Reduction', 'UV Resistant Finish', 'Child Safe Hardware'];
 
     const attributes = (category?.attributes && category.attributes.length > 0) ? category.attributes : defaultAttributes;
     const features = (category?.features && category.features.length > 0) ? category.features : defaultFeatures;
@@ -81,18 +81,18 @@ const CategoryDetail = () => {
         <main className="bg-white min-h-screen">
             {/* Lightbox Modal */}
             {lightboxImage && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 md:p-10"
                     onClick={() => setLightboxImage(null)}
                 >
                     <button className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
                         <X size={32} />
                     </button>
-                    <motion.img 
+                    <motion.img
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        src={lightboxImage} 
-                        alt="Preview" 
+                        src={lightboxImage}
+                        alt="Preview"
                         className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
                     />
                 </div>
@@ -109,7 +109,7 @@ const CategoryDetail = () => {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-                        
+
                         {/* LEFT: Information Column */}
                         <div className="lg:col-span-5 relative z-10">
                             <div className="flex flex-col border-l-2 border-primary/5 pl-10 py-6">
@@ -146,14 +146,14 @@ const CategoryDetail = () => {
                                                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                                                 className="px-10 py-5 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-xl shadow-primary/10 flex items-center justify-center gap-3 group"
                                             >
-                                                Get Pricing Info 
+                                                Get Pricing Info
                                                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                             </button>
                                             <button
                                                 onClick={() => setIsVekaDrawerOpen(true)}
                                                 className="px-10 py-5 bg-secondary text-white font-bold rounded-2xl hover:bg-secondary-light transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-3"
                                             >
-                                                Technical Specs 
+                                                Technical Specs
                                                 <LayoutGrid size={20} />
                                             </button>
                                         </div>
@@ -161,10 +161,7 @@ const CategoryDetail = () => {
 
                                     {/* Series Metadata */}
                                     <div className="pt-10 flex gap-12 border-t border-slate-100">
-                                        <div className="space-y-1">
-                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Engineering</p>
-                                            <p className="text-primary font-black text-sm">German Profile</p>
-                                        </div>
+
                                         <div className="space-y-1">
                                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Testing</p>
                                             <p className="text-primary font-black text-sm">AS/NZS Compliant</p>
@@ -184,8 +181,8 @@ const CategoryDetail = () => {
                             >
                                 {/* Decorative "Glass" Frame Background */}
                                 <div className="absolute -inset-10 bg-slate-50 rounded-[4rem] -z-10 group-hover:bg-secondary/5 transition-colors duration-700" />
-                                
-                                <div 
+
+                                <div
                                     className="relative aspect-square md:aspect-[5/6] bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 overflow-hidden cursor-zoom-in"
                                     onClick={() => setLightboxImage(heroImages[activeImage])}
                                 >
@@ -213,7 +210,7 @@ const CategoryDetail = () => {
                                     {/* Gallery Photos Count Counter */}
                                     {heroImages.length > 1 && (
                                         <div className="absolute top-8 right-8 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-full tracking-widest uppercase">
-                                            {activeImage + 1} / {heroImages.length} 
+                                            {activeImage + 1} / {heroImages.length}
                                         </div>
                                     )}
                                 </div>
@@ -225,9 +222,8 @@ const CategoryDetail = () => {
                                             <button
                                                 key={i}
                                                 onClick={() => setActiveImage(i)}
-                                                className={`w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all p-1 bg-white flex-shrink-0 ${
-                                                    activeImage === i ? 'border-secondary shadow-lg scale-110' : 'border-transparent opacity-40 hover:opacity-100 hover:scale-105'
-                                                }`}
+                                                className={`w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all p-1 bg-white flex-shrink-0 ${activeImage === i ? 'border-secondary shadow-lg scale-110' : 'border-transparent opacity-40 hover:opacity-100 hover:scale-105'
+                                                    }`}
                                             >
                                                 <img src={img} alt={`Slide ${i + 1}`} className="w-full h-full object-cover rounded-xl" />
                                             </button>
@@ -277,14 +273,8 @@ const CategoryDetail = () => {
                             viewport={{ once: true }}
                             className="space-y-10"
                         >
-                            <span className="text-secondary text-sm font-black uppercase tracking-[0.3em]">
-                                {isLoading ? (
-                                    <Skeleton className="h-4 w-32 mx-auto" />
-                                ) : (
-                                    category?.detailSubtitle || "Precision Engineering"
-                                )}
-                            </span>
-                            
+
+
                             <h2 className="text-4xl md:text-5xl font-black text-primary leading-tight">
                                 {isLoading ? (
                                     <Skeleton className="h-12 w-3/4 mx-auto" />
@@ -337,7 +327,7 @@ const CategoryDetail = () => {
                 <section className="py-24 bg-white border-t border-slate-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-                            
+
                             {/* Brand & Narrative Side */}
                             <div className="lg:col-span-4 space-y-10">
                                 <div className="space-y-4">
@@ -348,7 +338,7 @@ const CategoryDetail = () => {
                                 </div>
                                 <div className="text-sm text-slate-500 font-medium leading-relaxed">
                                     <p className="mb-8">Powered by internationally recognized **VEKA SOFTLINE** engineering, our systems are precisely calibrated for New Zealand's rigorous environments.</p>
-                                    
+
                                     <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100 space-y-4">
                                         <img
                                             src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/veka-logo-F1E4F9CE48-seeklogo.com_resized_resized.png"
@@ -370,8 +360,8 @@ const CategoryDetail = () => {
                             <div className="lg:col-span-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
                                     {Object.entries(category.specs).map(([key, value], i) => (
-                                        <div 
-                                            key={i} 
+                                        <div
+                                            key={i}
                                             className="py-6 border-b border-slate-100 flex flex-col justify-center group"
                                         >
                                             <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em] mb-1 group-hover:text-secondary transition-colors">
@@ -383,7 +373,7 @@ const CategoryDetail = () => {
                                         </div>
                                     ))}
                                 </div>
-                                
+
                                 <div className="mt-12 flex items-center gap-6 p-4 bg-primary/[0.02] rounded-2xl border border-primary/5">
                                     <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary">
                                         <Zap size={18} />
@@ -420,16 +410,16 @@ const CategoryDetail = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {relatedProducts.map((prod) => (
-                                <Link 
-                                    key={prod.id} 
+                                <Link
+                                    key={prod.id}
                                     to={`/category/${prod.id}`}
                                     className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col"
                                     onClick={() => window.scrollTo(0, 0)}
                                 >
                                     <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                                        <img 
-                                            src={prod.image} 
-                                            alt={prod.title} 
+                                        <img
+                                            src={prod.image}
+                                            alt={prod.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors" />

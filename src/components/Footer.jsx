@@ -49,8 +49,8 @@ const Footer = () => {
                         <h4 className="font-bold text-primary mb-6 uppercase tracking-wider text-sm">Company</h4>
                         <ul className="space-y-4">
                             <li>
-                                <Link 
-                                    to="/#about" 
+                                <Link
+                                    to="/#about"
                                     onClick={(e) => {
                                         if (isHomePage) {
                                             e.preventDefault();
@@ -63,8 +63,8 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link 
-                                    to="/#gallery" 
+                                <Link
+                                    to="/#gallery"
                                     onClick={(e) => {
                                         if (isHomePage) {
                                             e.preventDefault();
@@ -81,8 +81,8 @@ const Footer = () => {
                             <li><Link to="/product-specifications" className="text-slate-600 hover:text-secondary transition-colors">Product Specifications</Link></li>
                             <li><Link to="/privacy-policy" className="text-slate-600 hover:text-secondary transition-colors">Privacy Policy</Link></li>
                             <li>
-                                <Link 
-                                    to="/#contact" 
+                                <Link
+                                    to="/#contact"
                                     onClick={(e) => {
                                         if (isHomePage) {
                                             e.preventDefault();
@@ -131,7 +131,7 @@ const Footer = () => {
                         {/* CodeMark */}
                         <div className="flex items-center gap-2">
                             <img
-                                src="https://thewindowcompany.co.nz/wp-content/uploads/2023/11/CodeMark_R_col-01-3-1.jpg"
+                                src="https://i.imgur.com/6TVK2f1.jpeg"
                                 alt="CodeMark Certified"
                                 className="h-12 md:h-14 w-auto object-contain mix-blend-multiply"
                             />

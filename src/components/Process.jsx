@@ -55,7 +55,7 @@ const Process = () => {
                         <span className="inline-block text-secondary font-semibold tracking-widest uppercase text-xs mb-4 px-4 py-2 bg-secondary/10 rounded-full">Our Process</span>
                         <h2 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                             Seamless Window{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Replacement NZ</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-light">Replacement</span>
                         </h2>
                     </motion.div>
                 </div>

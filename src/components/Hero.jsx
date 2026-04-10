@@ -113,16 +113,16 @@ const Hero = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply" />
                             </motion.div>
-                            
+
                             {/* Redesigned Promotional Badge - Sticker Style for Mobile */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ 
-                                    opacity: 1, 
+                                animate={{
+                                    opacity: 1,
                                     scale: 1,
-                                    y: [0, -8, 0] 
+                                    y: [0, -8, 0]
                                 }}
-                                transition={{ 
+                                transition={{
                                     opacity: { duration: 0.8, delay: 1 },
                                     scale: { duration: 0.8, delay: 1 },
                                     y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
@@ -135,12 +135,12 @@ const Hero = () => {
                                 <div>
                                     <h4 className="text-secondary font-black text-[10px] sm:text-xs uppercase tracking-[0.15em] mb-0.5">Free Upgrade</h4>
                                     <p className="text-primary font-bold text-[11px] sm:text-sm leading-tight">
-                                        Low-E argon-filled glass
+                                        Low-E argon-filled toughened glass
                                     </p>
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full animate-ping" />
                             </motion.div>
- 
+
                             {/* Secondary Floating Image - Only on Desktop */}
                             <motion.div
                                 initial={{ opacity: 0, x: 50, y: 50 }}
