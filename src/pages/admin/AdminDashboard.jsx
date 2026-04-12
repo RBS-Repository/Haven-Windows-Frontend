@@ -6,10 +6,10 @@ const AdminDashboard = () => {
     const { products, promo } = useAdmin();
 
     // Calculate stats
-    const totalCategories = products.length;
-    const totalProducts = products.reduce((acc, cat) => acc + cat.products.length, 0);
-    const windowCategories = products.filter(p => p.type === 'windows').length;
-    const doorCategories = products.filter(p => p.type === 'doors').length;
+    const totalCategories = products?.length || 0;
+    const totalProducts = (products || []).reduce((acc, cat) => acc + (cat?.products?.length || 0), 0);
+    const windowCategories = (products || []).filter(p => p.type === 'windows').length;
+    const doorCategories = (products || []).filter(p => p.type === 'doors').length;
 
     const stats = [
         {

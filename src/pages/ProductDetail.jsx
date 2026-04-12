@@ -41,8 +41,8 @@ const ProductDetail = () => {
     let product = null;
     let parentCategory = null;
 
-    for (const cat of products) {
-        const found = cat.products.find(p => p.id === id);
+    for (const cat of (products || [])) {
+        const found = (cat?.products || []).find(p => p.id === id);
         if (found) {
             product = found;
             parentCategory = cat;

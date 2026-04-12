@@ -31,8 +31,8 @@ const AdminProducts = () => {
 
     // Filter by type
     const filteredProducts = activeTab === 'all'
-        ? products
-        : products.filter(p => p.type === activeTab);
+        ? (products || [])
+        : (products || []).filter(p => p.type === activeTab);
 
     // Unified Product Form — combines old CategoryForm + ProductForm
     const ProductForm = ({ product, onSave, onCancel, isNew }) => {

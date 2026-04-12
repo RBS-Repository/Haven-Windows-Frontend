@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+ import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { productCategories } from '../data/products';
 
 // API Base URL - uses Vite proxy in development or Vercel rewrites in production
 const API_BASE = import.meta.env.VITE_API_BASE || '/api';
@@ -24,7 +25,7 @@ export const useAdmin = () => {
 };
 
 export const AdminProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(productCategories);
     const [promo, setPromo] = useState(defaultPromo);
     const [gallery, setGallery] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
