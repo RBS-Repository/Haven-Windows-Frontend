@@ -9,7 +9,7 @@ const Preloader = () => {
             {isLoading && (
                 <motion.div
                     initial={{ opacity: 1 }}
-                    exit={{ 
+                    exit={{
                         opacity: 0,
                         transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }
                     }}
@@ -39,10 +39,10 @@ const Preloader = () => {
                                 <motion.div
                                     initial={{ width: "0%" }}
                                     animate={{ width: "100%" }}
-                                    transition={{ 
-                                        duration: 2.5, 
+                                    transition={{
+                                        duration: 2.5,
                                         ease: "easeInOut",
-                                        repeat: Infinity 
+                                        repeat: Infinity
                                     }}
                                     className="absolute top-0 left-0 h-full bg-secondary"
                                 />
@@ -69,7 +69,7 @@ const Preloader = () => {
                     <div className="absolute bottom-12 flex flex-col items-center space-y-2">
                         <div className="w-px h-12 bg-gradient-to-b from-slate-200 to-transparent" />
                         <span className="text-[9px] font-bold text-slate-300 uppercase tracking-widest">
-                            Est. 2024 • NZ
+                            Est. 2026 • NZ
                         </span>
                     </div>
                 </motion.div>
