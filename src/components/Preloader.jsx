@@ -1,12 +1,20 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAdmin } from '../context/AdminContext';
+import { useState, useEffect } from 'react';
 
 const Preloader = () => {
-    const { isLoading } = useAdmin();
+    const [show, setShow] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShow(false);
+        }, 1200); // 1.2s local timer
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <AnimatePresence>
-            {isLoading && (
+            {show && (
                 <motion.div
                     initial={{ opacity: 1 }}
                     exit={{
