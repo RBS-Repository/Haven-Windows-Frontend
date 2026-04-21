@@ -240,10 +240,12 @@ const Navbar = () => {
                             <Link
                                 to="/"
                                 onClick={(e) => {
+                                    setIsMobileMenuOpen(false);
                                     if (isHomePage) {
                                         e.preventDefault();
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                        setIsMobileMenuOpen(false);
+                                        setTimeout(() => {
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }, 100);
                                     }
                                 }}
                                 className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
@@ -312,7 +314,9 @@ const Navbar = () => {
                                     setIsMobileMenuOpen(false);
                                     if (isHomePage) {
                                         e.preventDefault();
-                                        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                        setTimeout(() => {
+                                            document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                        }, 100);
                                     }
                                 }}
                                 className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
@@ -325,7 +329,9 @@ const Navbar = () => {
                                     setIsMobileMenuOpen(false);
                                     if (isHomePage) {
                                         e.preventDefault();
-                                        document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                                        setTimeout(() => {
+                                            document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                                        }, 100);
                                     }
                                 }}
                                 className="block px-4 py-3 rounded-xl text-base font-medium text-primary hover:bg-slate-50 transition-colors"
@@ -344,6 +350,11 @@ const Navbar = () => {
                                 if (!isHomePage) {
                                     e.preventDefault();
                                     setIsQuoteModalOpen(true);
+                                } else {
+                                    e.preventDefault();
+                                    setTimeout(() => {
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                    }, 100);
                                 }
                             }}
                             className="block w-full text-center bg-primary text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:bg-secondary transition-colors"

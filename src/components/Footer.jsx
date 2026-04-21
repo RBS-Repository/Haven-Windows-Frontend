@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 import { Link, useLocation } from 'react-router-dom';
 import { useAdmin } from '../context/AdminContext';
 
@@ -145,29 +143,19 @@ const Footer = () => {
                     <p className="text-slate-400 text-sm italic"></p>
                     <div className="flex flex-col items-center md:items-end gap-2">
                         <p className="text-slate-400 text-sm">© {new Date().getFullYear()} Haven Windows & Doors. All rights reserved.</p>
-                        <p className="text-slate-400 text-xs flex items-center gap-1">
-                            Website made with
-                            <motion.span
-                                animate={{ scale: [1, 1.3, 1] }}
-                                transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 0.5, ease: "easeInOut" }}
-                                className="text-red-500 inline-block mx-1"
-                            >
-                                ♥
-                            </motion.span>
-                            by
-                            <motion.a
+                        <p className="text-slate-400 text-sm flex items-center gap-1.5">
+                            <span>Designed & Developed by</span>
+                            <a
                                 href="https://budaquecreations.vercel.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-bold relative inline-block ml-1"
-                                whileHover={{ scale: 1.05 }}
-                                animate={{ scale: [1, 1.05, 1] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                className="relative inline-flex items-center font-medium group"
                             >
-                                {/* Glow Effect */}
-                                <span className="absolute inset-0 blur-md bg-secondary/30 rounded-full animate-pulse"></span>
-                                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-secondary to-secondary-light">Budaque Creations</span>
-                            </motion.a>
+                                <span className="text-slate-400 group-hover:text-secondary transition-colors duration-300">
+                                    Budaque Creations
+                                </span>
+                                <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-secondary group-hover:w-full transition-all duration-300 ease-out"></span>
+                            </a>
                         </p>
                     </div>
                 </div>
