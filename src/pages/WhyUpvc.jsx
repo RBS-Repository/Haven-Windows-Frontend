@@ -156,16 +156,32 @@ const WhyUpvc = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-primary text-white text-center">
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-6">Ready to Experience the uPVC Difference?</h2>
-                    <p className="text-xl text-slate-300 mb-10">
-                        Upgrade to a warmer, drier, and more energy-efficient home with Haven Windows & Doors.
-                    </p>
-                    <a href="#contact" className="inline-flex items-center gap-3 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary-light transition-all shadow-lg hover:shadow-secondary/20">
-                        Get a Free Quote <ArrowRight />
-                    </a>
+            <section className="py-20 md:py-32 bg-primary text-white text-center relative overflow-hidden">
+                {/* Integrated Brand Accent */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-secondary rounded-b-full shadow-lg shadow-secondary/20" />
+                
+                <div className="max-w-4xl mx-auto px-6 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <p className="text-xl md:text-5xl text-white mb-12 leading-[1.2] max-w-4xl mx-auto font-black tracking-tight">
+                            Upgrade to a warmer, drier, and more energy-efficient home with Haven Windows & Doors.
+                        </p>
+                        <a 
+                            href="#contact" 
+                            className="inline-flex items-center gap-4 bg-secondary text-white px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-secondary-light transition-all shadow-2xl shadow-secondary/20 transform hover:-translate-y-1 active:scale-95"
+                        >
+                            Get A Free Quote <ArrowRight size={20} />
+                        </a>
+                    </motion.div>
                 </div>
+
+                {/* Decorative background depth */}
+                <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/5 rounded-full blur-[100px]" />
+                <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full blur-[100px]" />
             </section>
 
             <QuoteForm />

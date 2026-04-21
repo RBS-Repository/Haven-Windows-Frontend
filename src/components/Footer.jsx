@@ -144,7 +144,7 @@ const Footer = () => {
                     <div className="flex flex-col items-center md:items-end gap-2">
                         <p className="text-slate-400 text-sm">© {new Date().getFullYear()} Haven Windows & Doors. All rights reserved.</p>
                         <p className="text-slate-400 text-sm flex items-center gap-1.5">
-                            <span>Designed & Developed by</span>
+                            <span>Developed by</span>
                             <a
                                 href="https://budaquecreations.vercel.app/"
                                 target="_blank"
